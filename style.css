@@ -145,6 +145,8 @@ header .navbar ul li a:hover{
     color: #eee;
     padding: 1rem 0;
     text-transform: none;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
 }
 .about .row{
     display: flex;
@@ -172,7 +174,8 @@ header .navbar ul li a:hover{
 .skill{
     flex: 0 0 40%;
     max-width: 40%; 
-    margin-top: 4rem;
+    margin-top: 3rem;
+    margin-right: 5rem;
     /* background: white; */
 }
 .skill .skill-item{
@@ -184,7 +187,7 @@ header .navbar ul li a:hover{
 .skill .skill-item h5{
     line-height: 5rem;
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
     color: #eee;
 }
@@ -258,13 +261,53 @@ header .navbar ul li a:hover{
     color: #fff;
     background: var(--yellow);
 }
+.portfolio-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 .portfolio .box-container{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     padding: 2rem 0;
 }
+.box-info{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* color: black; */
+    opacity: 0;
+    transition: 0.5s;
+    
+}
+.box-info a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 23px;
+    text-align: center;
+}
+.box-container:hover .box-info {
+    opacity: 2;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: 0.5s;
+    padding: 20px;
+    width: 230px;
+    height: 185px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: transparent;
+  }
+  
 .portfolio .box-container .box{
     height: 20rem;
     width: 26rem;
@@ -280,6 +323,7 @@ header .navbar ul li a:hover{
 }
 .portfolio .box-container .box:hover img{
     transform: scale(1.2);
+    opacity: 0.1;
 }
 .contact .row{
     display: flex;
@@ -367,9 +411,13 @@ header .navbar ul li a:hover{
         width: 100vw;
     }
 }
- @media(max-width:400px) {
+ @media(max-width:350) {
     header {
         width: 100vw;
+    }
+    .portfolio .box-container{
+        text-align: center;
+        width: 26rem;
     }
     .education .box-container .box{
         width: 100%;
